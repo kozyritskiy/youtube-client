@@ -52,7 +52,7 @@ export default function requestYouTube(token, maxRes) {
         content.classList.remove('s-main__list_is-active');
 
         if (walk > 0) {
-          content.style.transform = 'translate3d(2000px,0,0)';
+          content.style.transform = 'translate3d(200%,0,0)';
           controlPaginationPrev();
           setTimeout(() => {
             requestYouTube(results.prevPageToken, maxRes);
@@ -60,7 +60,7 @@ export default function requestYouTube(token, maxRes) {
           }, 700);
         }
         if (walk < 0) {
-          content.style.transform = 'translate3d(-3000px,0,0)';
+          content.style.transform = 'translate3d(-300%,0,0)';
           controlPaginationNext();
           setTimeout(() => {
             content.style.transform = 'translate3d(-50%,0,0)';
