@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <link rel="manifest" href="./img/site.webmanifest">
+    <link rel="mask-icon" href="./img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>YouTube client</title>
+</head>
+<body>
+    <template id="parallax">
+        <section class="s-parallax">
+            <div class="s-parallax__star" id="stars1"></div>
+            <div class="s-parallax__star" id="stars2"></div>
+            <div class="s-parallax__star" id="stars3"></div>
+        </section>
+    </template>
+    <template id="main">
+        <section class="s-main">
+            <header class="header">
+                <div class="header__left">
+                    <div class="theme-button" id="themeBtn">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34c-.39-.39-1.02-.39-1.41 0L9 12.25 11.75 15l8.96-8.96c.39-.39.39-1.02 0-1.41z"></path>
+                        </svg>
+                        <span class="theme-button__text">Don't push</span>
+                    </div>
+                </div>
+            </header>
+            <div class="container">
+                <h1 class="s-main__title">YouTube Searcher</h1>
+                <main class="s-main__search">
+                    <form class="s-main__form" id="form" action="#">
+                        <input class="s-main__input" id="search" type="text" placeholder="Type something..." autocomplete="off" />
+                        <input class="s-main__btn" type="submit" value="Search" />
+                    </form>
+                    <div class="s-main__content">
+                        <ul class="s-main__list" id="results"></ul>
+                    </div>
+                    <div class="pagination">
+                        <ul class="pagination__list">
+                            <li class="pagination__item pagination__item_is-active" data-page="1">1</li>
+                            <li class="pagination__item" data-page="2">2</li>
+                        </ul>
+                    </div>
+                    <div class="swipe">swipe</div>
+                </main>
+                
+                <!-- <button id="btn-prev" class="btn">prev</button>
+                <button id="btn-next" class="btn">next</button> -->
+            </div>
+        </section>
+    </template>
+    <script>
+        function init() {
+                gapi.client.setApiKey("AIzaSyCIs9LxOj_BoaoAqvvOI-cRJv_NpCgguKE");
+                gapi.client.load("youtube", "v3", function () { });
+            }
+    </script>
+    <script src="./build/bundle.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+</body>
+</html>

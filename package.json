@@ -1,0 +1,26 @@
+{
+  "name": "youtube-client",
+  "version": "1.0.0",
+  "description": "rolling_scopes_task",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack && webpack-dev-server --inline --hot",
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
