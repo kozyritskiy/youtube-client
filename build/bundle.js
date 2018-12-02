@@ -148,7 +148,7 @@ function requestYouTube(token, maxRes) {
     var request = gapi.client.youtube.search.list({
       part: 'id',
       type: 'video',
-      q: encodeURIComponent(searchValue).replace(/%20/g, '+'),
+      q: searchValue,
       maxResults: maxRes,
       pageToken: token,
       order: 'viewCount',
@@ -179,19 +179,25 @@ function requestYouTube(token, maxRes) {
 
         if (walk > 0) {
           content.style.transform = 'translate3d(200%,0,0)';
+          setTimeout(function () {
+            content.style.display = 'none';
+            content.style.transform = 'translate3d(-50%,0,0)';
+          }, 500);
           (0, _controlPaginationPrev2.default)();
           setTimeout(function () {
             requestYouTube(results.prevPageToken, maxRes);
-            content.style.transform = 'translate3d(-50%,0,0)';
-          }, 700);
+          }, 550);
         }
         if (walk < 0) {
           content.style.transform = 'translate3d(-300%,0,0)';
+          setTimeout(function () {
+            content.style.display = 'none';
+            content.style.transform = 'translate3d(-50%,0,0)';
+          }, 500);
           (0, _controlPaginationNext2.default)();
           setTimeout(function () {
-            content.style.transform = 'translate3d(-50%,0,0)';
             requestYouTube(results.nextPageToken, maxRes);
-          }, 600);
+          }, 550);
         }
       };
 
@@ -207,7 +213,7 @@ function requestYouTube(token, maxRes) {
         content.classList.remove('s-main__list_is-active');
         setTimeout(function () {
           content.style.transform = 'translate3d(-50%,0,0)';
-        }, 600);
+        }, 500);
       };
 
       currentListnerMove = function listnerMove(e) {
@@ -280,6 +286,7 @@ function requestYouTube(token, maxRes) {
           });
         });
       });
+      content.style.display = 'flex';
       // render cycle end
       setTimeout(function () {
         paginationList.style.display = 'flex';
