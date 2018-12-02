@@ -56,22 +56,22 @@ export default function requestYouTube(token, maxRes) {
           setTimeout(() => {
             content.style.display = 'none';
             content.style.transform = 'translate3d(-50%,0,0)';
-          }, 500);
+          }, 350);
           controlPaginationPrev();
           setTimeout(() => {
             requestYouTube(results.prevPageToken, maxRes);
-          }, 550);
+          }, 400);
         }
         if (walk < 0) {
           content.style.transform = 'translate3d(-300%,0,0)';
           setTimeout(() => {
             content.style.display = 'none';
             content.style.transform = 'translate3d(-50%,0,0)';
-          }, 500);
+          }, 350);
           controlPaginationNext();
           setTimeout(() => {
             requestYouTube(results.nextPageToken, maxRes);
-          }, 550);
+          }, 400);
         }
       };
 
@@ -87,7 +87,7 @@ export default function requestYouTube(token, maxRes) {
         content.classList.remove('s-main__list_is-active');
         setTimeout(() => {
           content.style.transform = 'translate3d(-50%,0,0)';
-        }, 500);
+        }, 400);
       };
 
       currentListnerMove = function listnerMove(e) {

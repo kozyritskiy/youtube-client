@@ -182,22 +182,22 @@ function requestYouTube(token, maxRes) {
           setTimeout(function () {
             content.style.display = 'none';
             content.style.transform = 'translate3d(-50%,0,0)';
-          }, 500);
+          }, 350);
           (0, _controlPaginationPrev2.default)();
           setTimeout(function () {
             requestYouTube(results.prevPageToken, maxRes);
-          }, 550);
+          }, 400);
         }
         if (walk < 0) {
           content.style.transform = 'translate3d(-300%,0,0)';
           setTimeout(function () {
             content.style.display = 'none';
             content.style.transform = 'translate3d(-50%,0,0)';
-          }, 500);
+          }, 350);
           (0, _controlPaginationNext2.default)();
           setTimeout(function () {
             requestYouTube(results.nextPageToken, maxRes);
-          }, 550);
+          }, 400);
         }
       };
 
@@ -213,7 +213,7 @@ function requestYouTube(token, maxRes) {
         content.classList.remove('s-main__list_is-active');
         setTimeout(function () {
           content.style.transform = 'translate3d(-50%,0,0)';
-        }, 500);
+        }, 400);
       };
 
       currentListnerMove = function listnerMove(e) {
